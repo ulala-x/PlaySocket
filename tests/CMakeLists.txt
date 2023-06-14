@@ -3,9 +3,10 @@ if(ENABLE_TESTING)
     set(TEST_HEADERS "")
 
     add_executable(${UNIT_TEST_NAME} ${TEST_SOURCES} ${TEST_HEADERS})
+    # add_library(${UNIT_TEST_NAME} ${TEST_SOURCES} ${TEST_HEADERS})
 
     target_link_libraries(${UNIT_TEST_NAME} PUBLIC ${LIBRARY_NAME})
-    target_link_libraries(${UNIT_TEST_NAME} PRIVATE Catch2::Catch2)
+    target_link_libraries(${UNIT_TEST_NAME} PRIVATE Catch2 Catch2WithMain)
 
     target_set_warnings(
         TARGET

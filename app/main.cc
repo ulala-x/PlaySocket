@@ -7,7 +7,9 @@
 #include <cxxopts.hpp>
 #include <fmt/format.h>
 #include <nlohmann/json.hpp>
+#include <server/version.h>
 #include <spdlog/spdlog.h>
+#include <zmq_addon.hpp>
 
 #include "config.hpp"
 #include "my_lib.h"
@@ -26,6 +28,11 @@ int main(int argc, char **argv)
               << '\n';
     std::cout << "SPDLOG: " << SPDLOG_VER_MAJOR << "." << SPDLOG_VER_MINOR
               << "." << SPDLOG_VER_PATCH << '\n';
+    std::tuple<int, int, int> version = zmq::version();
+    std::cout << "CPPZMQ: " << std::get<0>(version) << "."
+              << std::get<1>(version) << "." << std::get<2>(version)
+              << std::endl;
+    std::cout << "CPPSERVER: " << CppServer::version << std::endl;
     std::cout << "\n\nUsage Example:\n";
 
     // Compiler Warning and clang tidy error

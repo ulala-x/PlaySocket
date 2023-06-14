@@ -1,3 +1,6 @@
 [submodule "external/vcpkg"]
 	path = external/vcpkg
 	url = https://github.com/microsoft/vcpkg.git
+[submodule "external/CppServer"]
+	path = external/CppServer
+	url = https://github.com/chronoxor/CppServer.git

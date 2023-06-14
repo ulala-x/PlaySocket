@@ -10,7 +10,7 @@ prepare:
 conan_d:
 	rm -rf build
 	mkdir build
-	cd build && conan install .. -s build_type=Debug --output-folder=. --build missing -s compiler.cppstd=17
+	cd build && conan install .. -s build_type=Debug --output-folder=. --build missing -s compiler.cppstd=20
 
 conan_r:
 	rm -rf build

@@ -8,7 +8,11 @@ target_link_libraries(
             nlohmann_json::nlohmann_json
             fmt::fmt
             spdlog::spdlog
-            cxxopts::cxxopts)
+            cxxopts::cxxopts
+            cppzmq
+            cppserver
+
+            )
 
 if(${ENABLE_WARNINGS})
     target_set_warnings(

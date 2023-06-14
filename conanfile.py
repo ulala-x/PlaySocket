@@ -12,6 +12,7 @@ class CompressorRecipe(ConanFile):
         self.requires("spdlog/1.11.0")
         self.requires("catch2/2.13.9")
         self.requires("cxxopts/3.1.1")
+        self.requires("cppzmq/4.9.0")
 
     def generate(self):
         tc = CMakeToolchain(self)
