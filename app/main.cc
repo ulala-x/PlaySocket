@@ -19,6 +19,7 @@ namespace fs = std::filesystem;
 
 int main(int argc, char **argv)
 {
+    std::cout << "main: start" << std::endl;
     std::cout << "JSON: " << NLOHMANN_JSON_VERSION_MAJOR << "."
               << NLOHMANN_JSON_VERSION_MINOR << "."
               << NLOHMANN_JSON_VERSION_PATCH << '\n';

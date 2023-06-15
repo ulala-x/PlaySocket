@@ -147,15 +147,23 @@ elseif(USE_CPM)
 
 endif()
 
+
 include(AddGitSubmodule)
 set(CPPSERVER_MODULE "YES")
+if(WIN32)
+    set(GIL_EXCUTABLE "gil.bat")
+else()
+    set(GIL_EXCUTABLE "gil")
+endif()
 add_git_submodule_with(
-    RELATIVE_DIR external/CppServer
-    CMD gil
-    PARAM update
-)
+        RELATIVE_DIR external/CppServer
+        GIT_TAG 34100be
+        CMD ${GIL_EXCUTABLE}
+        PARAM update
+    )
 
 # SUB DIRECTORIES
+add_definitions(-D_SILENCE_CXX20_CISO646_REMOVED_WARNING)
 
 add_subdirectory(configured)
 add_subdirectory(external)

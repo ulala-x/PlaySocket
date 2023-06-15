@@ -1,6 +1,7 @@
 set(APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cc")
 
 add_executable(${EXECUTABLE_NAME} ${APP_SOURCES})
+find_package(cppzmq)
 
 target_link_libraries(
     ${EXECUTABLE_NAME}
@@ -11,7 +12,6 @@ target_link_libraries(
             cxxopts::cxxopts
             cppzmq
             cppserver
-
             )
 
 if(${ENABLE_WARNINGS})
