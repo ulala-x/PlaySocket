@@ -2,7 +2,11 @@
 
 #include <nlohmann/json.hpp>
 
+#include "bit_converter.hpp"
 #include "my_lib.h"
+#include "ring_buffer.hpp"
+#include "stream_parser.hpp"
+#include "stream_socket.hpp"
 
 int print_hello_world()
 {

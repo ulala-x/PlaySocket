@@ -1,6 +1,12 @@
 if(ENABLE_TESTING)
-    set(TEST_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cc")
-    set(TEST_HEADERS "")
+    set(TEST_SOURCES
+        "${CMAKE_CURRENT_SOURCE_DIR}/main.cc"
+    )
+    set(TEST_HEADERS
+         "${CMAKE_CURRENT_SOURCE_DIR}/test_bit_converter.hpp"
+         "${CMAKE_CURRENT_SOURCE_DIR}/test_ring_buffer.hpp"
+         "${CMAKE_CURRENT_SOURCE_DIR}/test_stream_parser.hpp"
+    )
 
     add_executable(${UNIT_TEST_NAME} ${TEST_SOURCES} ${TEST_HEADERS})
     # add_library(${UNIT_TEST_NAME} ${TEST_SOURCES} ${TEST_HEADERS})

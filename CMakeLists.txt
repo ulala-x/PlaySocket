@@ -35,7 +35,7 @@ option(ENABLE_CMAKE_FORMAT "Enable to add cmake-format." ON)
 option(ENABLE_LTO "Enable to add Link Time Optimization." ON)
 
 # Project/Library Names
-set(LIBRARY_NAME "lib")
+set(LIBRARY_NAME "playsocket")
 set(UNIT_TEST_NAME "playsocket_unit_tests")
 set(EXECUTABLE_NAME "main")
 
@@ -48,6 +48,11 @@ include(Tools)
 
 if(ENABLE_WARNINGS)
     include(Warnings)
+endif()
+
+if(MSVC)
+    # 모든 경고를 오류로 처리하지 않도록 설정
+    add_compile_options("/WX-")
 endif()
 
 add_cmake_format_target()
@@ -143,6 +148,14 @@ elseif(USE_CPM)
     NAME spdlog
     GITHUB_REPOSITORY gabime/spdlog
     GIT_TAG v1.11.0
+    )
+
+    CPMAddPackage(
+    NAME TBB
+    GITHUB_REPOSITORY oneapi-src/oneTBB
+    GIT_TAG v2021.9.0
+    OPTIONS
+        "TBB_TEST OFF"
     )
 
 endif()
